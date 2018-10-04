@@ -1,4 +1,7 @@
 const viewer = new Cesium.Viewer('cesiumContainer', {
+    imageryProvider:  Cesium.createOpenStreetMapImageryProvider({
+        url : 'https://a.tile.openstreetmap.org/'
+    }),
     baseLayerPicker: true,
     animation: false,
     timeline: false,
@@ -6,12 +9,10 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
     sceneModePicker: false,
     navigationInstructionsInitiallyVisible: false,
     selectionIndicator: false,
-    // imageryProvider: Cesium.createOpenStreetMapImageryProvider({
-    //     url: 'https://a.tile.openstreetmap.org/'
-    // }),
     requestRenderMode: true,
     maximumRenderTimeChange: Infinity
 });
+
 
 const homeView = {
     x: 3893307.38,
@@ -28,11 +29,16 @@ viewer.homeButton.viewModel.command.beforeExecute.addEventListener(function(
 
 const tileset = viewer.scene.primitives.add(
     new Cesium.Cesium3DTileset({
-        url: './pctiles',
+        url: './pctiles/tileset.json',
         debugShowBoundingVolume: false
     })
 );
+tileset.style = new Cesium.Cesium3DTileStyle({
+            pointSize: 2
+});
+
 tileset.readyPromise.then(function() {
+    console.log('Loaded tileset');
     var bounding = tileset._root._boundingVolume;
     var center = bounding.boundingSphere.center;
     var cart = Cesium.Ellipsoid.WGS84.cartesianToCartographic(center);
