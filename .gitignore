@@ -4,3 +4,5 @@
 node_modules
 pointclouds/cesium
 pointclouds/entwine
+pctiles
+*.gz

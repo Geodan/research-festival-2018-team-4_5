@@ -1,4 +1,6 @@
-{
-    "input": "arenagebied.las",
-    "output": "/var/data/entwine/arena/"
+{ 
+	"input": "/pointclouds/pgarenagebied_color.las",
+	"reprojection": { "out": "EPSG:4978" },
+	"output": "/pointclouds/entwine"
+
 }
