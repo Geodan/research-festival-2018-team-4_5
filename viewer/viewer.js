@@ -158,11 +158,8 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
     sceneModePicker: false,
     navigationInstructionsInitiallyVisible: false,
     selectionIndicator: false,
-<<<<<<< HEAD
     imageryProvider: false,
     imageryProviderViewModels: imagery.viewModels,
-=======
->>>>>>> af7f84bdde40c533a68e3ee6690edf2477bcb4b4
     requestRenderMode: true,
     maximumRenderTimeChange: Infinity
 });
