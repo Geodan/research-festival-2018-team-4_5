@@ -148,9 +148,6 @@ imagery = {
 };
 
 const viewer = new Cesium.Viewer('cesiumContainer', {
-    imageryProvider:  Cesium.createOpenStreetMapImageryProvider({
-        url : 'https://a.tile.openstreetmap.org/'
-    }),
     baseLayerPicker: true,
     animation: false,
     timeline: false,
@@ -163,7 +160,6 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
     requestRenderMode: true,
     maximumRenderTimeChange: Infinity
 });
-
 
 const homeView = {
     x: 3893307.38,
@@ -185,7 +181,7 @@ const tileset = viewer.scene.primitives.add(
     })
 );
 tileset.style = new Cesium.Cesium3DTileStyle({
-            pointSize: 2
+    pointSize: 2
 });
 
 tileset.readyPromise.then(function() {
