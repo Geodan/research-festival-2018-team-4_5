@@ -13,6 +13,19 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
     maximumRenderTimeChange: Infinity
 });
 
+const homeView = {
+    x: 3893307.38,
+    y: 336636.24,
+    z: 5024885.55
+};
+viewer.camera.setView({ destination: homeView });
+viewer.homeButton.viewModel.command.beforeExecute.addEventListener(function(
+    commandInfo
+) {
+    viewer.camera.setView({ destination: homeView });
+    commandInfo.cancel = true;
+});
+
 const tileset = viewer.scene.primitives.add(
     new Cesium.Cesium3DTileset({
         url: './pctiles',
