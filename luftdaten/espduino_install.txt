@@ -1,0 +1,2 @@
+Installatie: zie website
+NB: Om Sketch te uploaden: verbind D0 met GND en druk op Reset knop. Vervolgens kan je de sketch uploaden.
