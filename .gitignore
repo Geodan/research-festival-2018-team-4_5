@@ -1,3 +1,6 @@
 *.las
 *.laz
 *.ifc
+node_modules
+pointclouds/cesium
+pointclouds/entwine
