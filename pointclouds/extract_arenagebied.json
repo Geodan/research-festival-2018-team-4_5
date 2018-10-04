@@ -1,0 +1,16 @@
+{
+    "pipeline": [
+        {
+            "type" : "readers.las",
+            "filename" : "/media/usb1/LAZ/c_25gz1.laz"
+        },
+	{
+      	"type":"filters.crop",
+      	"bounds":"([124430,480649],[124922,480940])"
+	},
+        {
+            "type" : "writers.las",
+            "filename" : "arenagebied.las"
+        }
+    ]
+}

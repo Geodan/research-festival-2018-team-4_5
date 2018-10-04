@@ -1,0 +1,17 @@
+{
+    "pipeline": [
+ {
+      "type":"readers.pgpointcloud",
+      "connection":"dbname='research' user='tomt'",
+      "schema":"ahn3_pointcloud",
+      "table":"vw_ahn3",
+      "column":"pa",
+      "spatialreference":"EPSG:28992",
+      "where":"PC_Intersects(pa, ST_MakeEnvelope(124184.7,480503.9, 125168.6,481086.1,28992))"
+    },	
+        {
+            "type" : "writers.las",
+            "filename" : "pgarenagebied.las"
+        }
+    ]
+}
