@@ -197,3 +197,31 @@ tileset.readyPromise.then(function() {
     );
     viewer.camera.setView({ destination: dest });
 });
+
+client = new Paho.MQTT.Client('136.144.137.130', 9001, '', '/');
+
+function onConnect() {
+    console.log('Connected to websocket');
+    client.subscribe('dakdata');
+}
+
+function onConnectionLost(responseObject) {
+    if (responseObject.errorCode !== 0) {
+        console.log(
+            'Connection with websocket lost:' + responseObject.errorMessage
+        );
+    }
+}
+
+function onMessageArrived(message) {
+    console.log('Message recieved from websocket:' + message.payloadString);
+
+    const data = JSON.parse(message.payloadString);
+    const value = parseFloat(data.SensorValue.replace('+', ''));
+    console.log(value);
+}
+
+client.onConnectionLost = onConnectionLost;
+client.onMessageArrived = onMessageArrived;
+
+client.connect({ onSuccess: onConnect });
