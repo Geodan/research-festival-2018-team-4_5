@@ -1,0 +1,5 @@
+{ 
+	"input": "/pointclouds/arenagebied_color.las",
+	"reprojection": { "out": "EPSG:4978" },
+	"output": "/pointclouds/entwine"
+}

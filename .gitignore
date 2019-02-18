@@ -6,3 +6,4 @@ pointclouds/cesium
 pointclouds/entwine
 pctiles
 *.gz
+data

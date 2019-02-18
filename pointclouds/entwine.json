@@ -1,6 +1,0 @@
-{ 
-	"input": "/pointclouds/pgarenagebied_color.las",
-	"reprojection": { "out": "EPSG:4978" },
-	"output": "/pointclouds/entwine"
-
-}
